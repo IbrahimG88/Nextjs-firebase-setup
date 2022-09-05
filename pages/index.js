@@ -13,6 +13,11 @@ function Home() {
           <a>Write Post</a>
         </Link>
       </li>
+      <li>
+        <Link href="/admin/edit">
+          <a>Edit Post</a>
+        </Link>
+      </li>
     </ul>
   );
 }
