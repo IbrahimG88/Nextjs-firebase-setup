@@ -12,16 +12,19 @@ const EditEntry = () => {
     body: undefined,
   });
 
-  useEffect(async () => {
-    const { id } = router.query;
-    if (id) {
-      const res = await axios.get(`/api/entry/${id}`);
-      const { title, body } = res.data;
-      setContent({
-        title,
-        body,
-      });
-    }
+  useEffect(() => {
+    const editEntry = async () => {
+      const { id } = router.query;
+      if (id) {
+        const res = await axios.get(`/api/entry/${id}`);
+        const { title, body } = res.data;
+        setContent({
+          title,
+          body,
+        });
+      }
+    };
+    editEntry();
   }, [router]);
 
   const onChange = (e) => {

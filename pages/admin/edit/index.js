@@ -6,9 +6,12 @@ import axios from "axios";
 
 const List = () => {
   const [entries, setEntries] = useState([]);
-  useEffect(async () => {
-    const res = await axios.get("/api/entries");
-    setEntries(res.data.entriesData);
+  useEffect(() => {
+    const getEntries = async () => {
+      const res = await axios.get("/api/entries");
+      setEntries(res.data.entriesData);
+    };
+    getEntries();
   }, []);
 
   return (
