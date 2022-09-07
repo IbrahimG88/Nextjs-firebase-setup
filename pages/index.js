@@ -1,25 +1,24 @@
-import Link from "next/link";
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
 
-function Home() {
+export default function Home() {
   return (
-    <ul>
-      <li>
-        <Link href="/posts/">
-          <a>POSTS</a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/admin/post">
-          <a>Write Post</a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/admin/edit">
-          <a>Edit Post</a>
-        </Link>
-      </li>
-    </ul>
+    <div className={styles.container}>
+      <Head>
+        <title>Create Next App</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <main className={styles.main}>
+        <h1 className={styles.title}>
+          Welcome to <a href="https://nextjs.org">Next.js!</a> integrated with{" "}
+          <a href="https://mui.com/">Material-UI!</a>
+        </h1>
+        <p className={styles.description}>
+          Get started by editing{" "}
+          <code className={styles.code}>pages/index.js</code>
+        </p>
+      </main>
+    </div>
   );
 }
-
-export default Home;
